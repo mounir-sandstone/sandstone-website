@@ -24,15 +24,17 @@ const circleStyle = computed(() => {
     return 'background: rgb(250 242 229 / 60%); border-color: rgb(255 255 255 / 70%);'
 })
 const arrowColor = computed(() => props.variant === 'dark' ? '#FAF2E5' : '#22201F')
+const primaryHover = computed(() => props.variant === 'dark')
 </script>
 
 <template>
     <component :is="tag" v-bind="linkProp"
-        :class="['relative mr-[20px]', full ? 'flex items-center' : 'inline-flex items-center']">
+        :class="['group relative mr-[20px]', full ? 'flex items-center' : 'inline-flex items-center']">
         <!-- Pill -->
         <span :class="[
             pillClass,
-            'items-center px-[32px] py-[12px] w-full justify-center rounded-full text-sm font-semibold hover:opacity-90 transition-opacity duration-200 whitespace-nowrap',
+            'items-center px-[32px] py-[12px] w-full justify-center rounded-full text-sm font-semibold whitespace-nowrap transition-all duration-300 ease-out',
+            primaryHover ? 'group-hover:-translate-x-1' : 'hover:opacity-90',
             full ? 'flex flex-1 justify-center' : 'inline-flex',
         ]">
             {{ label }}
@@ -40,10 +42,18 @@ const arrowColor = computed(() => props.variant === 'dark' ? '#FAF2E5' : '#22201
 
         <!-- Floating arrow circle -->
         <span
-            class="absolute top-1/2 right-[-20px] -translate-y-1/2 border w-[43px] h-[43px] rounded-full flex items-center justify-center flex-shrink-0 backdrop-blur-sm"
+            :class="[
+                'absolute top-1/2 right-[-20px] -translate-y-1/2 border w-[43px] h-[43px] rounded-full flex items-center justify-center flex-shrink-0 backdrop-blur-sm transition-all duration-300 ease-out',
+                primaryHover ? 'group-hover:right-[calc(100%-32px)]' : '',
+            ]"
             :style="circleStyle">
 
-            <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+                :class="[
+                    'transition-transform duration-300 ease-out',
+                    primaryHover ? 'group-hover:-scale-x-100' : '',
+                ]"
+                width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10.0132 10.02L14.2574 5.52526C14.3901 5.38526 14.3901 5.16421 14.2574 5.01684L10.0059 0.5"
                     :stroke="arrowColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M14.5 5.26001H0.5" :stroke="arrowColor" stroke-miterlimit="10" stroke-linecap="round"
