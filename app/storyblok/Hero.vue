@@ -4,6 +4,7 @@ import gsap from 'gsap'
 const props = defineProps({ blok: Object })
 
 // ── Entrance animation refs ────────────────────────────────────────────────
+const heroSection = ref(null)
 const auroraEl = ref(null)
 const bgGlass = ref(null)
 const bgDots = ref(null)
@@ -11,10 +12,15 @@ const heroH1 = ref(null)
 const heroP = ref(null)
 const heroActions = ref(null)
 const heroScroll = ref(null)
+const heroContent = ref(null)
 
 const preloaderDone = useState('preloaderDone', () => false)
+const mediaReduceMotion = ref(false)
+let cleanupFns = []
 
 onMounted(() => {
+  mediaReduceMotion.value = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
   // Hide everything immediately so there's no flash before animation
   gsap.set(auroraEl.value, { y: 90, opacity: 0 })
   gsap.set(bgGlass.value, { opacity: 0 })
@@ -23,6 +29,101 @@ onMounted(() => {
   gsap.set(heroP.value, { y: 55, opacity: 0 })
   gsap.set(heroScroll.value, { y: 30, opacity: 0 })
   if (heroActions.value) gsap.set(heroActions.value, { y: 40, opacity: 0 })
+
+  if (mediaReduceMotion.value || !auroraEl.value || !heroSection.value) return
+
+  const navyLayer = auroraEl.value.querySelector('.g-navy')
+  const sandLayer = auroraEl.value.querySelector('.g-sand')
+  const coolLayer = auroraEl.value.querySelector('.g-cool')
+
+  if (navyLayer) {
+    gsap.to(navyLayer, {
+      x: 110,
+      y: -36,
+      rotate: -1.2,
+      scaleX: 1.08,
+      scaleY: 1.1,
+      duration: 6.4,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut',
+    })
+  }
+
+  if (sandLayer) {
+    gsap.to(sandLayer, {
+      x: -126,
+      y: -28,
+      rotate: 1.3,
+      scaleX: 1.1,
+      scaleY: 1.05,
+      duration: 5.7,
+      delay: 0.4,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut',
+    })
+  }
+
+  if (coolLayer) {
+    gsap.to(coolLayer, {
+      x: 90,
+      y: -20,
+      rotate: -0.8,
+      scaleX: 0.96,
+      scaleY: 1.08,
+      duration: 7.2,
+      delay: 0.8,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut',
+    })
+  }
+
+  const heroBounds = () => heroSection.value?.getBoundingClientRect()
+  const onPointerMove = (event) => {
+    const bounds = heroBounds()
+    if (!bounds) return
+    const x = (event.clientX - bounds.left) / bounds.width - 0.5
+    const y = (event.clientY - bounds.top) / bounds.height - 0.5
+
+    if (heroContent.value) {
+      gsap.to(heroContent.value, {
+        x: x * 24,
+        y: y * 18,
+        duration: 0.9,
+        ease: 'power3.out',
+      })
+    }
+
+    gsap.to(auroraEl.value, {
+      x: x * 46,
+      y: y * 24,
+      duration: 1.6,
+      ease: 'power3.out',
+    })
+
+    gsap.to(bgDots.value, {
+      x: -x * 18,
+      y: -y * 12,
+      duration: 1.2,
+      ease: 'power2.out',
+    })
+  }
+
+  const onPointerLeave = () => {
+    gsap.to([heroContent.value, auroraEl.value, bgDots.value], {
+      x: 0,
+      y: 0,
+      duration: 1.1,
+      ease: 'power3.out',
+    })
+  }
+
+  heroSection.value.addEventListener('pointermove', onPointerMove)
+  heroSection.value.addEventListener('pointerleave', onPointerLeave)
+  cleanupFns.push(() => heroSection.value?.removeEventListener('pointermove', onPointerMove))
+  cleanupFns.push(() => heroSection.value?.removeEventListener('pointerleave', onPointerLeave))
 })
 
 // Entrance from bottom — triggered once preloader finishes
@@ -47,10 +148,15 @@ watch(preloaderDone, (done) => {
   // 4. Scroll indicator last
   tl.to(heroScroll.value, { y: 0, opacity: 1, duration: 0.55 }, '-=0.25')
 })
+
+onUnmounted(() => {
+  cleanupFns.forEach((fn) => fn())
+  cleanupFns = []
+})
 </script>
 
 <template>
-  <section v-editable="blok"
+  <section ref="heroSection" v-editable="blok"
     class="relative h-[820px] flex flex-col items-center justify-center px-6 overflow-hidden bg-[#0c0c0e]">
 
     <!-- Exact Figma SVG — 3 paths + built-in blur & noise filters -->
@@ -116,9 +222,11 @@ watch(preloaderDone, (done) => {
     <!-- Dots / star pattern overlay -->
     <img ref="bgDots" src="../assets/imgs/dots pattern.svg" alt="" aria-hidden="true"
       class="absolute inset-0 w-full h-full object-cover z-[2] pointer-events-none select-none opacity-70" />
+    <div class="hero-wave-glow pointer-events-none" aria-hidden="true"></div>
+    <div class="hero-fade-bottom pointer-events-none" aria-hidden="true"></div>
 
     <!-- Main content -->
-    <div class="relative z-10 w-full max-w-3xl mx-auto text-left sm:text-center">
+    <div ref="heroContent" class="relative z-10 w-full max-w-3xl mx-auto text-left sm:text-center">
       <h1 ref="heroH1" class="sm:text-h1 text-[32px] font-semibold tracking-tight text-white mb-[20px] leading-[1.15]">
         {{ blok.Title }}
       </h1>
@@ -203,27 +311,44 @@ watch(preloaderDone, (done) => {
   mask-image: linear-gradient(to bottom, transparent 0%, transparent 40%, black 65%);
 }
 
-/* CSS keyframe animations for the 3 SVG path groups
-   transform-box: fill-box makes transforms relative to each element's own bounding box */
+/* Base movement in CSS, refined further with GSAP for the wave-warp feel. */
 .g-navy {
   transform-box: fill-box;
   transform-origin: center bottom;
-  animation: drift-navy 16s ease-in-out infinite;
+  animation: drift-navy 14s ease-in-out infinite;
   will-change: transform;
 }
 
 .g-sand {
   transform-box: fill-box;
   transform-origin: center bottom;
-  animation: drift-sand 13s ease-in-out 1.5s infinite;
+  animation: drift-sand 11s ease-in-out 1.2s infinite;
   will-change: transform;
 }
 
 .g-cool {
   transform-box: fill-box;
   transform-origin: center bottom;
-  animation: drift-cool 15s ease-in-out 4s infinite;
+  animation: drift-cool 12s ease-in-out 2.6s infinite;
   will-change: transform;
+}
+
+.hero-wave-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background:
+    radial-gradient(50% 40% at 18% 80%, rgba(17, 89, 173, 0.35), transparent 65%),
+    radial-gradient(48% 38% at 82% 75%, rgba(204, 179, 149, 0.3), transparent 70%);
+  mix-blend-mode: screen;
+}
+
+.hero-fade-bottom {
+  position: absolute;
+  inset: auto 0 0;
+  height: 42%;
+  z-index: 3;
+  background: linear-gradient(to top, rgba(12, 12, 14, 0.65) 0%, rgba(12, 12, 14, 0) 70%);
 }
 
 @keyframes drift-navy {
@@ -277,6 +402,14 @@ watch(preloaderDone, (done) => {
 
   100% {
     transform: translate(0px, 0px) scaleX(1) scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .g-navy,
+  .g-sand,
+  .g-cool {
+    animation: none;
   }
 }
 </style>
