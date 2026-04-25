@@ -1,0 +1,139 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 766" width="1440" height="766">
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="m0 0h1440v80h-1440z"/>
+		</clipPath>
+		<image  width="1440" height="766" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABaAAAAL+AQMAAABhTSGCAAAAAXNSR0IB2cksfwAAAANQTFRFAAAAp3o92gAAAAF0Uk5TAEDm2GYAAALsSURBVHic7c5BDQAgDAAx5t80HvYoIbkq6JwPzevARmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorpZXSSmmltFJaKa2UVkorF59uAv9xQKsNAAAAAElFTkSuQmCC"/>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp2">
+			<path d="m1823.67 765.5h-2207.17v-1165.19h2207.17z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp3">
+			<path d="m0 586h1440v-603h-1440z"/>
+		</clipPath>
+		<filter x="-50%" y="-50%" width="200%" height="200%" id="f1"> <feGaussianBlur stdDeviation="150"/> </filter>
+		<radialGradient id="g1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-265,265,0,696,72)">
+			<stop offset="0" stop-color="#ccb395"/>
+			<stop offset="1" stop-color="#ccb395"/>
+		</radialGradient>
+		<filter x="-50%" y="-50%" width="200%" height="200%" id="f2"> <feGaussianBlur stdDeviation="200"/> </filter>
+		<radialGradient id="g2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-215,215,0,696,42)">
+			<stop offset="0" stop-color="#ccb395" stop-opacity="1"/>
+			<stop offset="1" stop-color="#ccb395" stop-opacity=".58"/>
+		</radialGradient>
+		<radialGradient id="g3" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-192.5,192.5,0,720,-6.5)">
+			<stop offset="0" stop-color="#ccb395" stop-opacity="1"/>
+			<stop offset="1" stop-color="#ccb395" stop-opacity=".58"/>
+		</radialGradient>
+		<radialGradient id="g4" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-179.5,179.5,0,720,-19.5)">
+			<stop offset="0" stop-color="#ccb395"/>
+			<stop offset="1" stop-color="#ccb395"/>
+		</radialGradient>
+	</defs>
+	<style>
+		.s0 { fill: #081825 } 
+		.s1 { fill: none;stroke: #ffffff } 
+		.s2 { opacity: .2;filter: url(#f1);fill: url(#g1) } 
+		.s3 { opacity: .5;filter: url(#f2);fill: url(#g2) } 
+		.s4 { opacity: .5;filter: url(#f2);fill: url(#g3) } 
+		.s5 { filter: url(#f1);fill: url(#g4) } 
+		.s6 { fill: #fffcf6 } 
+		.s7 { fill: #ccb395 } 
+		.s8 { opacity: .7;fill: #fffcf6 } 
+		.s9 { opacity: .5;fill: #fffcf6 } 
+	</style>
+	<g id="Clip-Path" clip-path="url(#cp1)">
+		<g>
+			<use id="Calque 1" href="#img1" x="0" y="0"/>
+			<path class="s0" d="m1360 72c0 4.42 3.58 8 8 8h184c4.42 0 8 3.58 8 8v64c0 4.42-3.58 8-8 8h-1664c-4.42 0-8-3.58-8-8v-64c0-4.42 3.58-8 8-8h184c4.42 0 8-3.58 8-8v-64c0-4.42 3.58-8 8-8h1264c4.42 0 8 3.58 8 8z"/>
+		</g>
+	</g>
+	<g style="opacity: .45">
+		<g id="Clip-Path" clip-path="url(#cp2)">
+			<g>
+				<g style="opacity: .45">
+					<path fill-rule="evenodd" class="s1" d="m1377.44 780.95v-1196.09"/>
+					<path fill-rule="evenodd" class="s1" d="m1257.83 780.95v-1196.09"/>
+					<path fill-rule="evenodd" class="s1" d="m1138.22 780.95v-1196.09"/>
+					<path fill-rule="evenodd" class="s1" d="m1018.61 780.95v-1196.09"/>
+					<path fill-rule="evenodd" class="s1" d="m899 780.95v-1196.09"/>
+					<path fill-rule="evenodd" class="s1" d="m779.39 780.95v-1196.09"/>
+					<path fill-rule="evenodd" class="s1" d="m659.78 780.95v-1196.09"/>
+					<path fill-rule="evenodd" class="s1" d="m540.17 780.95v-1196.09"/>
+					<path fill-rule="evenodd" class="s1" d="m420.56 780.95v-1196.09"/>
+					<path fill-rule="evenodd" class="s1" d="m300.95 780.95v-1196.09"/>
+					<path fill-rule="evenodd" class="s1" d="m181.34 780.95v-1196.09"/>
+					<path fill-rule="evenodd" class="s1" d="m61.73 780.95v-1196.09"/>
+					<path fill-rule="evenodd" class="s1" d="m-416.2 302.02h2272.58"/>
+					<path fill-rule="evenodd" class="s1" d="m-416.2 660.84h2272.57"/>
+					<path fill-rule="evenodd" class="s1" d="m-416.2 182.4h2272.57"/>
+					<path fill-rule="evenodd" class="s1" d="m-416.2 541.23h2272.57"/>
+					<path fill-rule="evenodd" class="s1" d="m-416.2 62.8h2272.57"/>
+					<path fill-rule="evenodd" class="s1" d="m-416.2 421.62h2272.57"/>
+				</g>
+			</g>
+		</g>
+	</g>
+	<g id="Clip-Path" clip-path="url(#cp3)">
+		<g>
+			<g style="opacity: .4">
+				<g>
+					<path fill-rule="evenodd" class="s2" d="m696-193c-269.86 0-488 118.45-488 265 0 146.55 218.14 265 488 265 269.86 0 488-118.46 488-265 0-146.55-218.14-265-488-265z"/>
+				</g>
+				<g>
+					<path fill-rule="evenodd" class="s3" d="m696-173c-218.99 0-396 96.11-396 215 0 118.9 177.01 215 396 215 218.99 0 396-96.11 396-215 0-118.9-177.01-215-396-215z"/>
+				</g>
+				<g>
+					<path fill-rule="evenodd" class="s4" d="m720-199c-196.32 0-355 86.05-355 192.5 0 106.45 158.68 192.5 355 192.5 196.32 0 355-86.05 355-192.5 0-106.45-158.69-192.5-355-192.5z"/>
+				</g>
+				<g>
+					<path fill-rule="evenodd" class="s5" d="m720-199c-183.04 0-331 80.24-331 179.5 0 99.26 147.96 179.5 331 179.5 183.04 0 331-80.24 331-179.5 0-99.26-147.96-179.5-331-179.5z"/>
+				</g>
+			</g>
+			<g style="opacity: .7">
+				<path fill-rule="evenodd" class="s6" d="m467.74 55.12c-0.62 0-1.12 0.49-1.12 1.11 0 0.62 0.5 1.12 1.12 1.12 0.62 0 1.11-0.5 1.11-1.12 0-0.62-0.49-1.11-1.11-1.11z"/>
+				<path fill-rule="evenodd" class="s6" d="m535.22 50.1c-0.62 0-1.12 0.49-1.12 1.11 0 0.62 0.5 1.12 1.12 1.12 0.62 0 1.11-0.5 1.11-1.12 0-0.62-0.49-1.11-1.11-1.11z"/>
+				<path fill-rule="evenodd" class="s6" d="m450.45 19.98c-0.62 0-1.11 0.5-1.11 1.12 0 0.62 0.49 1.11 1.11 1.11 0.62 0 1.12-0.49 1.12-1.11 0-0.62-0.5-1.12-1.12-1.12z"/>
+				<path fill-rule="evenodd" class="s6" d="m553.06 18.31c-0.31 0-0.56 0.25-0.56 0.56 0 0.31 0.25 0.55 0.56 0.55 0.31 0 0.56-0.24 0.56-0.55 0-0.31-0.25-0.56-0.56-0.56z"/>
+				<path fill-rule="evenodd" class="s6" d="m561.43 55.67c-0.31 0-0.56 0.25-0.56 0.56 0 0.31 0.25 0.56 0.56 0.56 0.31 0 0.55-0.25 0.55-0.56 0-0.31-0.24-0.56-0.55-0.56z"/>
+				<path fill-rule="evenodd" class="s6" d="m512.91 19.43c-0.31 0-0.56 0.24-0.56 0.55 0 0.31 0.25 0.56 0.56 0.56 0.31 0 0.56-0.25 0.56-0.56 0-0.31-0.25-0.55-0.56-0.55z"/>
+				<path fill-rule="evenodd" class="s6" d="m516.81 81.88c-0.3 0-0.55 0.25-0.55 0.56 0 0.31 0.25 0.56 0.55 0.56 0.31 0 0.56-0.25 0.56-0.56 0-0.31-0.25-0.56-0.56-0.56z"/>
+				<path fill-rule="evenodd" class="s6" d="m466.06 8.27c-0.61 0-1.11 0.5-1.11 1.12 0 0.61 0.5 1.11 1.11 1.11 0.62 0 1.12-0.5 1.12-1.11 0-0.62-0.5-1.12-1.12-1.12z"/>
+				<path fill-rule="evenodd" class="s6" d="m504.55 76.31c-0.62 0-1.12 0.5-1.12 1.11 0 0.62 0.5 1.12 1.12 1.12 0.61 0 1.11-0.5 1.11-1.12 0-0.61-0.5-1.11-1.11-1.11z"/>
+				<path fill-rule="evenodd" class="s6" d="m913.4 55.12c-0.61 0-1.11 0.49-1.11 1.11 0 0.62 0.5 1.12 1.11 1.12 0.62 0 1.12-0.5 1.12-1.12 0-0.62-0.5-1.11-1.12-1.11z"/>
+				<path fill-rule="evenodd" class="s6" d="m980.88 50.1c-0.61 0-1.11 0.49-1.11 1.11 0 0.62 0.5 1.12 1.11 1.12 0.62 0 1.12-0.5 1.12-1.12 0-0.62-0.5-1.11-1.12-1.11z"/>
+				<path fill-rule="evenodd" class="s6" d="m896.12 19.98c-0.62 0-1.12 0.5-1.12 1.12 0 0.62 0.5 1.11 1.12 1.11 0.61 0 1.11-0.49 1.11-1.11 0-0.62-0.5-1.12-1.11-1.12z"/>
+				<path fill-rule="evenodd" class="s6" d="m998.73 18.31c-0.31 0-0.56 0.25-0.56 0.56 0 0.31 0.25 0.55 0.56 0.55 0.3 0 0.55-0.24 0.55-0.55 0-0.31-0.25-0.56-0.55-0.56z"/>
+				<path fill-rule="evenodd" class="s6" d="m1007.09 55.67c-0.31 0-0.56 0.25-0.56 0.56 0 0.31 0.25 0.56 0.56 0.56 0.31 0 0.56-0.25 0.56-0.56 0-0.31-0.25-0.56-0.56-0.56z"/>
+				<path fill-rule="evenodd" class="s6" d="m958.57 19.43c-0.3 0-0.55 0.24-0.55 0.55 0 0.31 0.25 0.56 0.55 0.56 0.31 0 0.56-0.25 0.56-0.56 0-0.31-0.25-0.55-0.56-0.55z"/>
+				<path fill-rule="evenodd" class="s6" d="m962.48 81.88c-0.31 0-0.56 0.25-0.56 0.56 0 0.31 0.25 0.56 0.56 0.56 0.31 0 0.56-0.25 0.56-0.56 0-0.31-0.25-0.56-0.56-0.56z"/>
+				<path fill-rule="evenodd" class="s6" d="m911.73 8.27c-0.62 0-1.12 0.5-1.12 1.12 0 0.61 0.5 1.11 1.12 1.11 0.62 0 1.11-0.5 1.11-1.11 0-0.62-0.49-1.12-1.11-1.12z"/>
+				<path fill-rule="evenodd" class="s6" d="m950.21 76.31c-0.62 0-1.12 0.5-1.12 1.11 0 0.62 0.5 1.12 1.12 1.12 0.62 0 1.11-0.5 1.11-1.12 0-0.61-0.49-1.11-1.11-1.11z"/>
+				<path fill-rule="evenodd" class="s7" d="m336.85 37.28c-0.37 0-0.67 0.3-0.67 0.67 0 0.37 0.3 0.66 0.67 0.66 0.37 0 0.67-0.29 0.67-0.66 0-0.37-0.3-0.67-0.67-0.67z"/>
+				<path fill-rule="evenodd" class="s7" d="m283.43 68.66c-0.37 0-0.67 0.3-0.67 0.67 0 0.37 0.3 0.67 0.67 0.67 0.37 0 0.66-0.3 0.66-0.67 0-0.37-0.29-0.67-0.66-0.67z"/>
+				<path fill-rule="evenodd" class="s8" d="m707.9 35.22c-0.63 0-1.15 0.51-1.15 1.15 0 0.64 0.52 1.15 1.15 1.15 0.64 0 1.15-0.51 1.15-1.15 0-0.64-0.51-1.15-1.15-1.15z"/>
+				<path fill-rule="evenodd" class="s8" d="m777.55 30.04c-0.64 0-1.15 0.52-1.15 1.15 0 0.64 0.51 1.15 1.15 1.15 0.64 0 1.15-0.51 1.15-1.15 0-0.63-0.51-1.15-1.15-1.15z"/>
+				<path fill-rule="evenodd" class="s8" d="m690.06-1.04c-0.64 0-1.15 0.51-1.15 1.15 0 0.64 0.51 1.15 1.15 1.15 0.64 0 1.15-0.51 1.15-1.15 0-0.64-0.51-1.15-1.15-1.15z"/>
+				<path fill-rule="evenodd" class="s8" d="m758.56 62.85c-0.32 0-0.58 0.26-0.58 0.57 0 0.32 0.26 0.58 0.58 0.58 0.31 0 0.57-0.26 0.57-0.58 0-0.31-0.26-0.57-0.57-0.57z"/>
+				<path fill-rule="evenodd" class="s8" d="m745.89 57.09c-0.64 0-1.15 0.52-1.15 1.15 0 0.64 0.51 1.16 1.15 1.16 0.64 0 1.15-0.52 1.15-1.16 0-0.63-0.51-1.15-1.15-1.15z"/>
+				<path fill-rule="evenodd" class="s9" d="m996.3 3.21c-0.72 0-1.3 0.58-1.3 1.29 0 0.72 0.58 1.3 1.3 1.3 0.71 0 1.29-0.58 1.29-1.3 0-0.71-0.58-1.29-1.29-1.29z"/>
+				<path fill-rule="evenodd" class="s9" d="m1115.6 1.26c-0.36 0-0.65 0.29-0.65 0.65 0 0.36 0.29 0.65 0.65 0.65 0.36 0 0.65-0.29 0.65-0.65 0-0.36-0.29-0.65-0.65-0.65z"/>
+				<path fill-rule="evenodd" class="s9" d="m1125.33 44.7c-0.36 0-0.65 0.29-0.65 0.65 0 0.36 0.29 0.65 0.65 0.65 0.36 0 0.65-0.29 0.65-0.65 0-0.36-0.29-0.65-0.65-0.65z"/>
+				<path fill-rule="evenodd" class="s9" d="m1068.92 2.56c-0.36 0-0.65 0.29-0.65 0.65 0 0.36 0.29 0.65 0.65 0.65 0.36 0 0.65-0.29 0.65-0.65 0-0.36-0.29-0.65-0.65-0.65z"/>
+				<path fill-rule="evenodd" class="s9" d="m1344 112.71c-0.72 0-1.3 0.58-1.3 1.3 0 0.71 0.58 1.29 1.3 1.29 0.71 0 1.29-0.58 1.29-1.29 0-0.72-0.58-1.3-1.29-1.3z"/>
+				<path fill-rule="evenodd" class="s9" d="m1144.3 154.21c-0.72 0-1.3 0.58-1.3 1.29 0 0.72 0.58 1.3 1.3 1.3 0.71 0 1.29-0.58 1.29-1.3 0-0.71-0.58-1.29-1.29-1.29z"/>
+				<path fill-rule="evenodd" class="s9" d="m1232.48 78.35c-0.36 0-0.65 0.29-0.65 0.65 0 0.35 0.29 0.64 0.65 0.64 0.36 0 0.65-0.29 0.65-0.64 0-0.36-0.29-0.65-0.65-0.65z"/>
+				<path fill-rule="evenodd" class="s9" d="m1263.6 152.26c-0.36 0-0.65 0.29-0.65 0.65 0 0.36 0.29 0.65 0.65 0.65 0.36 0 0.65-0.29 0.65-0.65 0-0.36-0.29-0.65-0.65-0.65z"/>
+				<path fill-rule="evenodd" class="s9" d="m1233.77 120.49c-0.36 0-0.65 0.29-0.65 0.65 0 0.36 0.29 0.65 0.65 0.65 0.36 0 0.65-0.29 0.65-0.65 0-0.36-0.29-0.65-0.65-0.65z"/>
+				<path fill-rule="evenodd" class="s9" d="m1273.33 195.7c-0.36 0-0.65 0.29-0.65 0.65 0 0.36 0.29 0.65 0.65 0.65 0.36 0 0.65-0.29 0.65-0.65 0-0.36-0.29-0.65-0.65-0.65z"/>
+				<path fill-rule="evenodd" class="s9" d="m1280.46 111.41c-0.36 0-0.65 0.29-0.65 0.65 0 0.36 0.29 0.65 0.65 0.65 0.36 0 0.65-0.29 0.65-0.65 0-0.36-0.29-0.65-0.65-0.65z"/>
+				<path fill-rule="evenodd" class="s9" d="m1216.92 153.56c-0.36 0-0.65 0.29-0.65 0.65 0 0.36 0.29 0.64 0.65 0.64 0.36 0 0.65-0.28 0.65-0.64 0-0.36-0.29-0.65-0.65-0.65z"/>
+				<path fill-rule="evenodd" class="s9" d="m1208.49 66.03c-0.36 0-0.65 0.29-0.65 0.65 0 0.35 0.29 0.64 0.65 0.64 0.36 0 0.65-0.29 0.65-0.64 0-0.36-0.29-0.65-0.65-0.65z"/>
+				<path fill-rule="evenodd" class="s9" d="m1290.18 44.63c-0.36 0-0.65 0.29-0.65 0.65 0 0.36 0.29 0.65 0.65 0.65 0.36 0 0.65-0.29 0.65-0.65 0-0.36-0.29-0.65-0.65-0.65z"/>
+				<path fill-rule="evenodd" class="s9" d="m1168.29 113.36c-0.36 0-0.65 0.29-0.65 0.65 0 0.36 0.29 0.65 0.65 0.65 0.36 0 0.65-0.29 0.65-0.65 0-0.36-0.29-0.65-0.65-0.65z"/>
+				<path fill-rule="evenodd" class="s9" d="m1162.45 140.59c-0.72 0-1.3 0.58-1.3 1.3 0 0.72 0.58 1.29 1.3 1.29 0.71 0 1.29-0.57 1.29-1.29 0-0.72-0.58-1.3-1.29-1.3z"/>
+				<path fill-rule="evenodd" class="s9" d="m1257.76 48.52c-0.72 0-1.3 0.58-1.3 1.3 0 0.72 0.58 1.3 1.3 1.3 0.71 0 1.29-0.58 1.29-1.3 0-0.72-0.58-1.3-1.29-1.3z"/>
+				<path fill-rule="evenodd" class="s9" d="m1304.45 117.9c-0.72 0-1.3 0.58-1.3 1.29 0 0.72 0.58 1.3 1.3 1.3 0.71 0 1.29-0.58 1.29-1.3 0-0.71-0.58-1.29-1.29-1.29z"/>
+			</g>
+		</g>
+	</g>
+</svg>

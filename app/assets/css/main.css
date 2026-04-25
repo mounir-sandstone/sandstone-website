@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────
+   Font Face — Altone
+   ───────────────────────────────────────────── */
+@font-face {
+    font-family: 'Altone';
+    src: url('../fonts/Altone-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Altone';
+    src: url('../fonts/Altone-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Altone';
+    src: url('../fonts/Altone-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Altone';
+    src: url('../fonts/Altone-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Altone';
+    src: url('../fonts/Altone-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Altone';
+    src: url('../fonts/Altone-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* ─────────────────────────────────────────────
+   Tailwind v4 Design Tokens
+   Each token auto-generates a utility class:
+     --color-primary   → bg-primary, text-primary, border-primary
+     --color-white     → bg-white, text-white
+     --font-size-h1    → text-h1
+   ───────────────────────────────────────────── */
+@theme {
+    /* ── Colors ── */
+    --color-primary: #091A28;
+    /* main brand / dark navy */
+    --color-white: #FFFCF6;
+    /* main brand / beige */
+    --color-beige: #CCB395;
+    /* off-white text */
+    --color-dark: #091A28;
+    /* dark text */
+    --color-surface: #0c0c0e;
+    /* page background */
+    --color-surface-card: #141416;
+    /* card background */
+    --color-muted: rgba(255, 252, 246, 0.45);
+    /* muted text on dark */
+    --color-border: rgba(255, 252, 246, 0.12);
+    /* subtle borders */
+
+    /* ── Font family ── */
+    --font-sans: 'Altone', ui-sans-serif, system-ui, sans-serif;
+
+    /* ── Font sizes ──
+       Usage: class="text-h1", class="text-h2 ", class="text-body" etc. */
+    --font-size-h1: 2.5rem;
+    /* 40px */
+    --font-size-h2: 2.5rem;
+    /* 40px */
+    --font-size-h3: 1.5rem;
+    /* 24px */
+    --font-size-body: 1.125rem;
+    /* 18px */
+    --font-size-ui: 1rem;
+    /* 16px – buttons, nav, badges */
+
+    /* ── Font weights ──
+       Usage: class="font-regular", class="font-medium", class="font-semibold" */
+    --font-weight-extralight: 200;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* ── Spacing extras ── */
+    --spacing-18: 4.5rem;
+    --spacing-22: 5.5rem;
+    --spacing-128: 32rem;
+
+    /* ── Border radius ── */
+    --radius-pill: 9999px;
+
+    /* ── Easing ── */
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* ── Container ── */
+    --width-container: 1280px;
+}
+
+/* ─────────────────────────────────────────────
+   Explicit text-size utilities
+   (Tailwind v4 doesn't auto-generate these from
+   --font-size-* @theme vars reliably)
+   ───────────────────────────────────────────── */
+@utility text-h1 {
+    font-size: 2.5rem;
+    line-height: 1.15;
+}
+
+@utility text-h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+/* 24px */
+@utility text-h3 {
+    font-size: 1.5rem;
+    line-height: 1.25;
+}
+
+/* 18px */
+@utility text-body {
+    font-size: 1.125rem;
+    line-height: 1.65;
+}
+
+/* 16px – buttons, nav, badges */
+@utility text-ui {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* ─────────────────────────────────────────────
+   Global base styles
+   ───────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-surface);
+    color: var(--color-white);
+    font-family: var(--font-sans);
+    font-size: var(--font-size-body);
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
