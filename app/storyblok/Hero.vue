@@ -12,7 +12,7 @@ const heroH1 = ref(null)
 const heroP = ref(null)
 const heroActions = ref(null)
 const heroScroll = ref(null)
-const heroContent = ref(null)
+const heroWaveGlow = ref(null)
 
 const preloaderDone = useState('preloaderDone', () => false)
 const mediaReduceMotion = ref(false)
@@ -87,15 +87,6 @@ onMounted(() => {
     const x = (event.clientX - bounds.left) / bounds.width - 0.5
     const y = (event.clientY - bounds.top) / bounds.height - 0.5
 
-    if (heroContent.value) {
-      gsap.to(heroContent.value, {
-        x: x * 24,
-        y: y * 18,
-        duration: 0.9,
-        ease: 'power3.out',
-      })
-    }
-
     gsap.to(auroraEl.value, {
       x: x * 46,
       y: y * 24,
@@ -109,10 +100,19 @@ onMounted(() => {
       duration: 1.2,
       ease: 'power2.out',
     })
+
+    if (heroWaveGlow.value) {
+      gsap.to(heroWaveGlow.value, {
+        x: x * 36,
+        y: y * 24,
+        duration: 1.3,
+        ease: 'power3.out',
+      })
+    }
   }
 
   const onPointerLeave = () => {
-    gsap.to([heroContent.value, auroraEl.value, bgDots.value], {
+    gsap.to([auroraEl.value, bgDots.value, heroWaveGlow.value], {
       x: 0,
       y: 0,
       duration: 1.1,
@@ -222,7 +222,7 @@ onUnmounted(() => {
     <!-- Dots / star pattern overlay -->
     <img ref="bgDots" src="../assets/imgs/dots pattern.svg" alt="" aria-hidden="true"
       class="absolute inset-0 w-full h-full object-cover z-[2] pointer-events-none select-none opacity-70" />
-    <div class="hero-wave-glow pointer-events-none" aria-hidden="true"></div>
+    <div ref="heroWaveGlow" class="hero-wave-glow pointer-events-none" aria-hidden="true"></div>
     <div class="hero-fade-bottom pointer-events-none" aria-hidden="true"></div>
 
     <!-- Main content -->
@@ -341,6 +341,8 @@ onUnmounted(() => {
     radial-gradient(50% 40% at 18% 80%, rgba(17, 89, 173, 0.35), transparent 65%),
     radial-gradient(48% 38% at 82% 75%, rgba(204, 179, 149, 0.3), transparent 70%);
   mix-blend-mode: screen;
+  animation: glow-wave 9.5s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 
 .hero-fade-bottom {
@@ -405,10 +407,33 @@ onUnmounted(() => {
   }
 }
 
+@keyframes glow-wave {
+  0% {
+    transform: translate3d(0px, 0px, 0) scale(1);
+    opacity: 0.9;
+  }
+
+  35% {
+    transform: translate3d(24px, -12px, 0) scale(1.03);
+    opacity: 0.98;
+  }
+
+  70% {
+    transform: translate3d(-22px, 10px, 0) scale(0.98);
+    opacity: 0.82;
+  }
+
+  100% {
+    transform: translate3d(0px, 0px, 0) scale(1);
+    opacity: 0.9;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .g-navy,
   .g-sand,
-  .g-cool {
+  .g-cool,
+  .hero-wave-glow {
     animation: none;
   }
 }
