@@ -16,7 +16,6 @@ const heroWaveGlow = ref(null)
 
 const preloaderDone = useState('preloaderDone', () => false)
 const mediaReduceMotion = ref(false)
-let cleanupFns = []
 
 onMounted(() => {
   mediaReduceMotion.value = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -79,51 +78,6 @@ onMounted(() => {
       ease: 'sine.inOut',
     })
   }
-
-  const heroBounds = () => heroSection.value?.getBoundingClientRect()
-  const onPointerMove = (event) => {
-    const bounds = heroBounds()
-    if (!bounds) return
-    const x = (event.clientX - bounds.left) / bounds.width - 0.5
-    const y = (event.clientY - bounds.top) / bounds.height - 0.5
-
-    gsap.to(auroraEl.value, {
-      x: x * 46,
-      y: y * 24,
-      duration: 1.6,
-      ease: 'power3.out',
-    })
-
-    gsap.to(bgDots.value, {
-      x: -x * 18,
-      y: -y * 12,
-      duration: 1.2,
-      ease: 'power2.out',
-    })
-
-    if (heroWaveGlow.value) {
-      gsap.to(heroWaveGlow.value, {
-        x: x * 36,
-        y: y * 24,
-        duration: 1.3,
-        ease: 'power3.out',
-      })
-    }
-  }
-
-  const onPointerLeave = () => {
-    gsap.to([auroraEl.value, bgDots.value, heroWaveGlow.value], {
-      x: 0,
-      y: 0,
-      duration: 1.1,
-      ease: 'power3.out',
-    })
-  }
-
-  heroSection.value.addEventListener('pointermove', onPointerMove)
-  heroSection.value.addEventListener('pointerleave', onPointerLeave)
-  cleanupFns.push(() => heroSection.value?.removeEventListener('pointermove', onPointerMove))
-  cleanupFns.push(() => heroSection.value?.removeEventListener('pointerleave', onPointerLeave))
 })
 
 // Entrance from bottom — triggered once preloader finishes
@@ -149,10 +103,6 @@ watch(preloaderDone, (done) => {
   tl.to(heroScroll.value, { y: 0, opacity: 1, duration: 0.55 }, '-=0.25')
 })
 
-onUnmounted(() => {
-  cleanupFns.forEach((fn) => fn())
-  cleanupFns = []
-})
 </script>
 
 <template>
