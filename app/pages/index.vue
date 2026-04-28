@@ -23,9 +23,9 @@ const fallbackHome = {
     _uid: 'fallback-hero',
     component: 'Hero',
     Eyebrow: 'Digital at sandstone speed',
-    Title: 'We are Sandstone.\nAn AI-native digital partner\nfor brands that want to lead.',
+    Title: 'We don’t sell deliverables. We design creative systems that evolve, learn, and scale.',
     Description:
-      'From strategy to build, we bring brand, product, and technology together to launch what matters next.',
+      'Sandstone brings together what growth pulls apart by connecting strategy, brand, technology, marketing and AI into one system built for clarity, speed and scalable performance.',
     actions: [
       {
         _uid: 'hero-action-primary',
