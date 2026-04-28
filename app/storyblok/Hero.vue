@@ -191,14 +191,14 @@ watch(preloaderDone, (done) => {
     <!-- Main content -->
     <div ref="heroContent"
       class="relative z-10 w-full max-w-5xl mx-auto text-left px-2 sm:text-center pt-16 sm:pt-20 md:pt-28">
-      <p ref="heroEyebrow"
+      <p v-if="blok.Eyebrow" ref="heroEyebrow"
         class="inline-flex items-center gap-2 text-[#f6efe3] tracking-[0.16em] uppercase text-[11px] sm:text-[12px] mb-5 sm:mb-7">
         <span class="inline-block h-[1px] w-10 bg-[#f6efe3]/70"></span>
-        {{ blok.Eyebrow || 'We are Sandstone' }}
+        {{ blok.Eyebrow }}
       </p>
 
       <h1 ref="heroH1"
-        class="text-[40px] sm:text-[58px] md:text-[72px] lg:text-[84px] font-semibold tracking-[-0.02em] text-white mb-5 sm:mb-6 leading-[1.02] text-balance sm:max-w-[16ch] mx-auto">
+        class="text-[34px] sm:text-[48px] md:text-[62px] lg:text-[72px] font-semibold tracking-[-0.02em] text-white mb-5 sm:mb-6 leading-[1.02] text-balance sm:max-w-[16ch] mx-auto">
         <template v-if="titleLines.length">
           <span v-for="(line, index) in titleLines" :key="`${line}-${index}`" class="block">
             {{ line }}
