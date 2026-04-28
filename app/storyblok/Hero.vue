@@ -194,7 +194,7 @@ watch(preloaderDone, (done) => {
       <p ref="heroEyebrow"
         class="inline-flex items-center gap-2 text-[#f6efe3] tracking-[0.16em] uppercase text-[11px] sm:text-[12px] mb-5 sm:mb-7">
         <span class="inline-block h-[1px] w-10 bg-[#f6efe3]/70"></span>
-        Sandstone
+        {{ blok.Eyebrow || 'We are Sandstone' }}
       </p>
 
       <h1 ref="heroH1"

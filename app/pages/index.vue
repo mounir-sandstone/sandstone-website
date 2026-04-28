@@ -22,9 +22,10 @@ const fallbackHome = {
   hero: {
     _uid: 'fallback-hero',
     component: 'Hero',
-    Title: 'Where human insight meets AI scale. Built for speed. Designed for impact.',
+    Eyebrow: 'Digital at sandstone speed',
+    Title: 'We are Sandstone.\nAn AI-native digital partner\nfor brands that want to lead.',
     Description:
-      'We partner with ambitious teams to architect, design, and deliver digital products that drive measurable growth.',
+      'From strategy to build, we bring brand, product, and technology together to launch what matters next.',
     actions: [
       {
         _uid: 'hero-action-primary',
