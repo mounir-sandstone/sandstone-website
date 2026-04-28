@@ -23,7 +23,7 @@ const fallbackHome = {
     _uid: 'fallback-hero',
     component: 'Hero',
     Eyebrow: '',
-    Title: 'We don’t sell deliverables. We design creative systems that evolve, learn, and scale.',
+    Title: 'We don’t sell deliverables. We design systems that evolve and scale.',
     Description:
       'Sandstone brings together what growth pulls apart by connecting strategy, brand, technology, marketing and AI into one system built for clarity, speed and scalable performance.',
     actions: [
