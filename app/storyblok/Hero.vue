@@ -13,6 +13,16 @@ const heroP = ref(null)
 const heroActions = ref(null)
 const heroScroll = ref(null)
 const heroWaveGlow = ref(null)
+const heroEyebrow = ref(null)
+
+const titleLines = computed(() => {
+  if (!props.blok?.Title) return []
+
+  return props.blok.Title
+    .split('\n')
+    .map(line => line.trim())
+    .filter(Boolean)
+})
 
 const preloaderDone = useState('preloaderDone', () => false)
 const mediaReduceMotion = ref(false)
@@ -24,6 +34,7 @@ onMounted(() => {
   gsap.set(auroraEl.value, { y: 90, opacity: 0 })
   gsap.set(bgGlass.value, { opacity: 0 })
   gsap.set(bgDots.value, { opacity: 0 })
+  if (heroEyebrow.value) gsap.set(heroEyebrow.value, { y: 30, opacity: 0 })
   gsap.set(heroH1.value, { y: 70, opacity: 0 })
   gsap.set(heroP.value, { y: 55, opacity: 0 })
   gsap.set(heroScroll.value, { y: 30, opacity: 0 })
@@ -94,6 +105,8 @@ watch(preloaderDone, (done) => {
   tl.to(auroraEl.value, { y: 0, opacity: 1, duration: 1.4, ease: 'power2.out' }, 0.05)
 
   // 3. Hero text — staggered enter from below
+  if (heroEyebrow.value)
+    tl.to(heroEyebrow.value, { y: 0, opacity: 1, duration: 0.65 }, 0.18)
   tl.to(heroH1.value, { y: 0, opacity: 1, duration: 0.85 }, 0.3)
   tl.to(heroP.value, { y: 0, opacity: 1, duration: 0.75 }, '-=0.55')
   if (heroActions.value)
@@ -176,12 +189,28 @@ watch(preloaderDone, (done) => {
     <div class="hero-fade-bottom pointer-events-none" aria-hidden="true"></div>
 
     <!-- Main content -->
-    <div ref="heroContent" class="relative z-10 w-full max-w-3xl mx-auto text-left sm:text-center">
-      <h1 ref="heroH1" class="sm:text-h1 text-[32px] font-semibold tracking-tight text-white mb-[20px] leading-[1.15]">
-        {{ blok.Title }}
+    <div ref="heroContent"
+      class="relative z-10 w-full max-w-5xl mx-auto text-left px-2 sm:text-center pt-16 sm:pt-20 md:pt-28">
+      <p ref="heroEyebrow"
+        class="inline-flex items-center gap-2 text-[#f6efe3] tracking-[0.16em] uppercase text-[11px] sm:text-[12px] mb-5 sm:mb-7">
+        <span class="inline-block h-[1px] w-10 bg-[#f6efe3]/70"></span>
+        Sandstone
+      </p>
+
+      <h1 ref="heroH1"
+        class="text-[40px] sm:text-[58px] md:text-[72px] lg:text-[84px] font-semibold tracking-[-0.02em] text-white mb-5 sm:mb-6 leading-[1.02] text-balance">
+        <template v-if="titleLines.length">
+          <span v-for="(line, index) in titleLines" :key="`${line}-${index}`" class="block">
+            {{ line }}
+          </span>
+        </template>
+        <template v-else>
+          {{ blok.Title }}
+        </template>
       </h1>
 
-      <p ref="heroP" class="sm:text-body text-ui font-medium text-white mx-auto mb-[40px] leading-relaxed">
+      <p ref="heroP"
+        class="sm:text-body text-ui font-medium text-white/85 sm:max-w-2xl mx-auto mb-[40px] sm:mb-[46px] leading-relaxed">
         {{ blok.Description }}
       </p>
 
