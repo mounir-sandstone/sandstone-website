@@ -16,12 +16,24 @@ const heroWaveGlow = ref(null)
 const heroEyebrow = ref(null)
 
 const titleLines = computed(() => {
-  if (!props.blok?.Title) return []
+  const title = props.blok?.Title?.trim()
+  if (!title) return []
 
-  return props.blok.Title
+  const explicitLines = title
     .split('\n')
     .map(line => line.trim())
     .filter(Boolean)
+
+  if (explicitLines.length > 1) return explicitLines
+
+  const words = title.split(/\s+/).filter(Boolean)
+  if (words.length < 4) return [title]
+
+  const splitIndex = Math.ceil(words.length / 2)
+  return [
+    words.slice(0, splitIndex).join(' '),
+    words.slice(splitIndex).join(' '),
+  ]
 })
 
 const preloaderDone = useState('preloaderDone', () => false)
