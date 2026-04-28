@@ -198,7 +198,7 @@ watch(preloaderDone, (done) => {
       </p>
 
       <h1 ref="heroH1"
-        class="text-[40px] sm:text-[58px] md:text-[72px] lg:text-[84px] font-semibold tracking-[-0.02em] text-white mb-5 sm:mb-6 leading-[1.02] text-balance">
+        class="text-[40px] sm:text-[58px] md:text-[72px] lg:text-[84px] font-semibold tracking-[-0.02em] text-white mb-5 sm:mb-6 leading-[1.02] text-balance sm:max-w-[16ch] mx-auto">
         <template v-if="titleLines.length">
           <span v-for="(line, index) in titleLines" :key="`${line}-${index}`" class="block">
             {{ line }}
@@ -210,7 +210,7 @@ watch(preloaderDone, (done) => {
       </h1>
 
       <p ref="heroP"
-        class="sm:text-body text-ui font-medium text-white/85 sm:max-w-2xl mx-auto mb-[40px] sm:mb-[46px] leading-relaxed">
+        class="sm:text-body text-ui font-medium text-white/85 sm:max-w-4xl mx-auto mb-[40px] sm:mb-[46px] leading-relaxed text-balance">
         {{ blok.Description }}
       </p>
 
